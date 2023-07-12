@@ -8,4 +8,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Checked Unchecked\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Checked Unchecked\" />
+  </ItemGroup>
 </Project>
