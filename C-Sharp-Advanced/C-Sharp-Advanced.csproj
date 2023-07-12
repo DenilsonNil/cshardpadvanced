@@ -10,8 +10,10 @@
 
   <ItemGroup>
     <None Remove="Checked Unchecked\" />
+    <None Remove="SobrecargaOperadores\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Checked Unchecked\" />
+    <Folder Include="SobrecargaOperadores\" />
   </ItemGroup>
 </Project>
