@@ -2,7 +2,7 @@
 
 class SobrecargaOperadores
 {
-    static void TestandoSobrecarga()
+    public void TestandoSobrecarga()
     {
         Fracao f1 = new Fracao(3, 2);
         Fracao f2 = new Fracao(6, 4);
