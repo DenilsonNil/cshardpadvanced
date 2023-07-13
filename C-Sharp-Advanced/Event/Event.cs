@@ -14,12 +14,12 @@ class Event
     {
         NumberGenerator g = new NumberGenerator();
 
-        //3 - Relacionando o método g_OnGenerated com o delegate
-        g.myDelegate += g_OnGenerated;
+        //3 - Relacionando o método g_OnGenerated com o event
+        g.myEvent += g_OnGenerated;
         g.Start();
     }
 
-    //6 - Método é invocado quando o delegate é executado (passo 5)
+    //6 - Método é invocado quando o event é executado (passo 5)
     static void g_OnGenerated(object sender, NumberEventArgs args)
     {
         Console.WriteLine("Número gerado: " + args.Number);
@@ -30,8 +30,8 @@ class Event
 
 class NumberGenerator
 {
-    //2 - Obtendo uma instancia do delegate
-    public event NumberHandler myDelegate;
+    //2 - Obtendo uma instancia do event
+    public event NumberHandler myEvent;
 
     Random r = new Random();
 
@@ -42,13 +42,13 @@ class NumberGenerator
         {
             int n = r.Next(100);
            
-            if (myDelegate != null)
+            if (myEvent != null)
             {
                 // 4 - Criando uma instancia de um objeto EventArgs
                 NumberEventArgs args = new NumberEventArgs() { Number = n };
 
-                // 5 - Delegate sendo chamado.
-                myDelegate(this, args);
+                // 5 - Event sendo executado.
+                myEvent(this, args);
             }
 
             Thread.Sleep(1000);
