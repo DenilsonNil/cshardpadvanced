@@ -10,10 +10,15 @@ class DelegateGenerico
 
         Temperature t = new Temperature();
 
-        //Definição dos delegates genéricose referenciar os métodos. Delegate do tipo Func podem referenciar métodos que tenham retorno.
+        /** Definição dos delegates genéricose referenciar os métodos. Delegate do tipo Func podem referenciar métodos que tenham retorno.
+         * Neste caso o primeiro parametro do generics significa o parametro e o último sempre o tipo de retorno. Em outras palavras o delegate abaixo
+         * do tipo Func pode apontar para metodos que recebem um boolean e retornam um boolean.
+         * Repare também que na mesma linha estamos criando o delegate e já apontando para os metodos, ou seja, sem usar o operador +=.
+         **/
         Func<double, double> convertToCelsius = t.ToCelsius;
         Func<double, double> convertToFahrenheit = t.ToFahrenheit;
 
+        //Invocando os métodos
         double celsius = convertToCelsius(90);
         double fahrenheit = convertToFahrenheit(25);
 
@@ -24,6 +29,7 @@ class DelegateGenerico
         Action<double> printCelsius = t.PrintCelsius;
         Action<double> printFahrenheit = t.PrintFahrenheit;
 
+        //Invocando os métodos
         printCelsius(80);
         printFahrenheit(20);
     }
